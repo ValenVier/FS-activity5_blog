@@ -3,30 +3,20 @@
 </header>
 
 <main class="main">
-    <section id="formulario" [innerHTML]="displayData()">
-        
+    <section id="formulario" class="main__formulario">
+        <form action="#">
+            <label for="title">Título</label>
+            <input type="text" id="title" placeholder="Introduzca un título">
+            <label for="urlImg">URL (Imagen)</label>
+            <input type="text" id="urlImg" placeholder="Introduzca una ruta">
+            <label for="date">Fecha</label>
+            <input type="date" id="date" placeholder="Introduzca un título">
+            <textarea name="textarea" rows="10" cols="50">Escriba la noticia aquí</textarea>
+            <button>Crear Noticia</button>
+        </form>        
     </section>
     
-    <section id="listado" >
-        <div class="main__noticia">
-            <h2 class="noticia_title">Noticia1</h2>
-            <figure class="">
-                <img class="noticia__img" src="https://emtstatic.com/2023/07/iStock-450136885-696x464.jpg" alt="arrayImgs[imagenActual].title">
-                <!-- <figcaption>title</figcaption> -->
-            </figure>
-            <p>asdfa</p>
-            <span>asdfa</span>
-        </div>
-        <div class="main__noticia">
-            <h2 class="noticia_title">Noticia1</h2>
-            <figure class="">
-                <img class="noticia__img" src="https://emtstatic.com/2023/07/iStock-450136885-696x464.jpg" alt="arrayImgs[imagenActual].title">
-                <!-- <figcaption>title</figcaption> -->
-            </figure>
-            <p>asdfa</p>
-            <span>asdfa</span>
-        </div>
-    </section>
+    <section id="listado" [innerHTML]="displayData()"></section>
 </main>
 
 <footer class="footer">

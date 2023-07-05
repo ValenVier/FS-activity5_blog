@@ -47,8 +47,12 @@
     padding-right: 1rem;
 }
 .noticia__text{
-
+    padding-bottom: 1rem;
 }
 .noticia__date{
+    font-style: italic;
+}
 
+.main__formulario{
+    padding: 2rem 2rem 0rem 2rem;
 }

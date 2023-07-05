@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Noticia } from 'src/app/interfaces/noticia.interface';
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css']
+  styleUrls: ['./blog.component.css'],
+  encapsulation: ViewEncapsulation.None /* necesario para poder utilizar los estilos en la función displayData() */
 })
 export class BlogComponent {
   arrayNews:Noticia[] = [];
@@ -14,7 +15,7 @@ export class BlogComponent {
       {
         title: 'Un hombre pregunta si, con lo del cambio climático, se puede comer turrón en julio',
         image: [{
-          url: 'https://www.elmundotoday.com/2023/07/un-hombre-pregunta-si-con-lo-del-cambio-climatico-se-puede-comer-turron-en-julio/',
+          url: 'https://emtstatic.com/2023/07/iStock-450136885-696x464.jpg',
           title: 'Foto noticia'
         }],
         text: 'Si en invierno hace calor, digo yo que me puedo apretar ahora una barra de jijona, ¿no?. Hay cambio o no hay cambio? García Blanco quiere un compromiso por escrito de los grandes supermercados asegurando que venderán turrón todo el año.',
@@ -23,7 +24,7 @@ export class BlogComponent {
       {
         title: 'Adios',
         image: [{
-          url: 'https://www.elmundotoday.com/2023/07/un-hombre-pregunta-si-con-lo-del-cambio-climatico-se-puede-comer-turron-en-julio/',
+          url: 'https://emtstatic.com/2023/07/iStock-450136885-696x464.jpg',
           title: 'sdf'
         }],
         text: 'qwe',
@@ -33,15 +34,12 @@ export class BlogComponent {
   }
 
   displayData():string{
-    
     let retornable:string = ""; 
     this.arrayNews.forEach(element => {
-      console.log(element.image)
-      retornable += `<div class="main__noticia"><h2 class="noticia_title">${element.title}</h2><figure class="">
-      <img class="noticia__img" src='${element.image[0].url}' alt="${element.image[0].title}"></figure><p class="noticia__text">${element.text}</p>
-      <span class="noticia__date">${element.date}</span></div>`;      
+      retornable += `<div class="main__noticia"><h2 class="noticia_title">${element.title}</h2><figure class=""><img class="noticia__img" src="${element.image[0].url}" alt="${element.image[0].title}"></figure><p class="noticia__text">${element.text}</p><span class="noticia__date">La noticia fue creada el día: ${element.date.getDate()}/${element.date.getMonth()}/${element.date.getFullYear()} a las ${element.date.getHours()}:${element.date.getMinutes()}:${element.date.getSeconds()} horas</span></div>`;      
     });
     return retornable;
+
   }
 
 }
