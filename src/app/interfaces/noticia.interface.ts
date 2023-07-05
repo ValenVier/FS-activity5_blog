@@ -1,6 +1,9 @@
 export interface Noticia {
     title:string;
-    image:any;
+    image:Array<{
+        url:string,
+        title:string
+    }>;
     text:string;
     date:Date;
 }
