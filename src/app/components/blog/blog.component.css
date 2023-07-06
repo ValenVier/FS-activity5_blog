@@ -54,5 +54,31 @@
 }
 
 .main__formulario{
-    padding: 2rem 2rem 0rem 2rem;
+    background-color: aquamarine;
+    padding: 2rem 2rem 1rem 2rem;
+    border: 1px solid black;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 1rem;
 }
+.main__formulario div{
+    margin-bottom: 0.5rem;
+}
+.formulario__input{
+    width: 55%;
+}
+.formulario--espacio{
+    margin-right: 1rem;
+}
+.formulario__boton{
+    margin-top: 1rem;
+    border: 1px solid black;
+    background-color: rgb(119, 190, 60);
+    padding: 1rem;
+    border-radius: 10%;
+}
+.formulario__boton:hover{
+    background-color: rgb(218, 152, 55);
+}
+

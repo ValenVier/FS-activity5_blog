@@ -5,5 +5,5 @@ export interface Noticia {
         title:string
     }>;
     text:string;
-    date:Date;
+    date:string;
 }

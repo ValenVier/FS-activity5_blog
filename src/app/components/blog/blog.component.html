@@ -4,16 +4,24 @@
 
 <main class="main">
     <section id="formulario" class="main__formulario">
-        <form action="#">
-            <label for="title">Título</label>
-            <input type="text" id="title" placeholder="Introduzca un título">
-            <label for="urlImg">URL (Imagen)</label>
-            <input type="text" id="urlImg" placeholder="Introduzca una ruta">
-            <label for="date">Fecha</label>
-            <input type="date" id="date" placeholder="Introduzca un título">
-            <textarea name="textarea" rows="10" cols="50">Escriba la noticia aquí</textarea>
-            <button>Crear Noticia</button>
-        </form>        
+        <div>
+            <div>
+                <label for="title" class="formulario--espacio">Título</label>
+                <input [(ngModel)]="newNews.title" class="formulario__input" type="text" id="title" placeholder="Introduzca un título">
+            </div>
+            <div>
+                <label for="urlImg" class="formulario--espacio">URL (Imagen)</label>
+                <input [(ngModel)]="newNews.image[0].url" class="formulario__input" type="text" id="urlImg" placeholder="Introduzca una ruta">
+            </div>
+            <div> <!-- la fecha de publicación no la escoge el usuario se crea de forma automática al dar a guardar aunque en esta actividad se ha dejado que el usaurio ponga la fecha de publicación -->
+                <label for="date" class="formulario--espacio">Fecha</label>
+                <input [(ngModel)]="newNews.date" class="formulario__input" type="date" id="date" placeholder="Introduzca un título">
+            </div>
+            <textarea [(ngModel)]="newNews.text" name="textarea" rows="10" cols="50" placeholder="Escriba la noticia aquí"></textarea>
+            <div>
+                <button class="formulario__boton" (click)="guardarNoticia()">Crear Noticia</button>
+            </div>
+        </div>        
     </section>
     
     <section id="listado" [innerHTML]="displayData()"></section>
